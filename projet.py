@@ -12,6 +12,9 @@ NB_POINTS = 150
 SEUIL = 0.97
 TAILLE_FENETRE = 30
 
+PATH_IMAGE_1 = './Images_Fragments/Lena2.png'
+PATH_IMAGE_2 = './Images_Fragments/Lena1.png'
+
 ##########################
 ##### Variables Globales
 ##########################
@@ -70,8 +73,8 @@ def score(m1,m2,taille) :
 ##########################
 
 print("Lecture des images")
-image1 = cv2.imread('./Images_Fragments/Lena2.png')
-image2 = cv2.imread('./Images_Fragments/Lena1.png')
+image1 = cv2.imread(PATH_IMAGE_1)
+image2 = cv2.imread(PATH_IMAGE_2)
 img1Rouge = image1.copy()
 img2Rouge = image2.copy()
 img1Save = image1.copy()
@@ -208,12 +211,12 @@ for i in range(0,heightRes) :
 for i in range(0,height1) :
     imageResFinaleBis.append(imageRes[i][0:widthRes])
 
-cv2.imwrite("./Resultat/partie1.jpg",image1)
-cv2.imwrite("./Resultat/partie2.jpg",image2)
-cv2.imwrite("./Resultat/partie1Rouge.jpg",img1Rouge)
-cv2.imwrite("./Resultat/partie2Rouge.jpg",img2Rouge)
-cv2.imwrite("./Resultat/partie2homographié.jpg",imageTransfoCircles)
-cv2.imwrite("./Resultat/imageResultatavecnoir.jpg",imageTransfoCircles)
+#cv2.imwrite("./Resultat/partie1.jpg",image1)
+#cv2.imwrite("./Resultat/partie2.jpg",image2)
+#cv2.imwrite("./Resultat/partie1Rouge.jpg",img1Rouge)
+#cv2.imwrite("./Resultat/partie2Rouge.jpg",img2Rouge)
+#cv2.imwrite("./Resultat/partie2homographié.jpg",imageTransfoCircles)
+#cv2.imwrite("./Resultat/imageResultatavecnoir.jpg",imageTransfoCircles)
 cv2.imwrite("./Resultat/imageResultat.jpg",np.float32(imageRes))
 cv2.imwrite("./Resultat/imageResultatBis.jpg",np.float32(imageResFinaleBis))
 
